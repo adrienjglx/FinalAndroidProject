@@ -12,7 +12,7 @@ Cette application Kotlin utilise le framework Compose pour créer une interface 
 
 1. Clonez ce dépôt Git sur votre ordinateur local en utilisant la commande suivante:
 
-git clone https://github.com/monutilisateur/monapplication.git
+`git clone https://github.com/monutilisateur/monapplication.git`
 
 
 2. Ouvrez le projet dans votre IDE préféré (nous recommandons IntelliJ IDEA) et importez les dépendances nécessaires en utilisant Gradle.
@@ -35,14 +35,14 @@ Si vous souhaitez contribuer au développement de cette application, veuillez su
 
 2. Clonez votre dépôt forké sur votre ordinateur local en utilisant la commande suivante:
 
-git clone https://github.com/votreutilisateur/monapplication.git
+`git clone https://github.com/votreutilisateur/monapplication.git`
 
 
 3. Ouvrez le projet dans votre IDE et importez les dépendances en utilisant Gradle.
 
 4. Créez une nouvelle branche pour votre fonctionnalité en utilisant la commande suivante:
 
-git checkout -b ma-nouvelle-fonctionnalite
+`git checkout -b ma-nouvelle-fonctionnalite`
 
 
 5. Implémentez la fonctionnalité que vous souhaitez

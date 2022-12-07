@@ -11,13 +11,15 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main)
 
         // initialize an array of beer names
-        val beerNames = arrayOf("Pale Ale", "IPA", "Stout", "Lager", "Pilsner")
-
+        val beerNames = loadUsers()//arrayOf("Pale Ale", "IPA", "Stout", "Lager", "Pilsner")
+        println(beerNames)
         // find the list view on the layout and set the adapter for it
         val listView = findViewById<ListView>(R.id.listView)
         listView.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, beerNames)
     }
 }
+
+
 
 /*
 @Composable

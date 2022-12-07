@@ -1,5 +1,4 @@
 # FinalAndroidProject
-# Mon application Kotlin
 
 Cette application Kotlin utilise le framework Compose pour créer une interface utilisateur riche et interactive, et Retrofit2 pour effectuer des appels à une API REST.
 

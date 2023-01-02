@@ -2,8 +2,6 @@ package com.example.finalandroidproject
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.ArrayAdapter
-import android.widget.ListView
 import androidx.activity.ComponentActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -18,8 +16,7 @@ class MainActivity : ComponentActivity() {
         // initialize an array of beer names
         beerNames.enqueue(object : Callback<List<Drinks>> {
             override fun onResponse(call: Call<List<Drinks>>, response: Response<List<Drinks>>) {
-                val allCountry = response.body()
-                allCountry.forEach { Log.d("name:", it) }
+                response.body()?.forEach { Log.d("name:", it.toString()) }
             }
 
 

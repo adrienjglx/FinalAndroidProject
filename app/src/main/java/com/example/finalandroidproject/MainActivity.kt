@@ -1,24 +1,39 @@
 package com.example.finalandroidproject
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.activity.ComponentActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val beerNames = beerAPI.retrofitService.getDrinks()
 
         // initialize an array of beer names
-        val beerNames = loadUsers()//arrayOf("Pale Ale", "IPA", "Stout", "Lager", "Pilsner")
-        println(beerNames)
+        beerNames.enqueue(object : Callback<List<Drinks>> {
+            override fun onResponse(call: Call<List<Drinks>>, response: Response<List<Drinks>>) {
+                val allCountry = response.body()
+                allCountry.forEach { Log.d("name:", it) }
+            }
+
+
+            override fun onFailure(call: Call<List<Drinks>>, t: Throwable) {
+                Log.i(MainActivity::class.simpleName, "on FAILURE!!!!")
+            }
+
+        })
+        //println(beerNames)
         // find the list view on the layout and set the adapter for it
-        val listView = findViewById<ListView>(R.id.listView)
-        listView.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, beerNames)
+        //val listView = findViewById<ListView>(R.id.listView)
+        //listView.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, beerNames)
     }
 }
-
 
 
 /*
